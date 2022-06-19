@@ -9,6 +9,10 @@
 
 
 
+## hostname
+sudo su root --session-command="sudo hostnamectl set-hostname k3sNode02 --static; head -n -3 /etc/hosts > tmp.txt && mv tmp.txt /etc/hosts;echo '127.0.1.1	k3sNode02' >> /etc/hosts;reboot";
+apt update;apt upgrade -y;apt install vim, kitty
+
 ## 2FA for ssh
 
 sudo apt install libpam-google-authenticator -y
@@ -19,6 +23,16 @@ ChallengeResonseAuthentication yes
 AuthenticationMethods publickey,keyboard-interactive 
 Port XXX # just no 22
 PermitRootLogin no
+
+
+Port 31112
+PermitRootLogin no
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+
+PubkeyAuthentication yes
+AuthenticationMethods publickey
 
 ### next
 google-authenticator
@@ -68,3 +82,8 @@ sudo iptables \
  sudo iptables --table nat --list
  sudo apt-get install iptables-persistent
  sudo su --session-command='iptables-save > /etc/iptables/rules.v4'
+
+
+ ###k3s
+ cgroup_memory=1 cgroup_enable=memory
+on /boot/cmdline.txt
