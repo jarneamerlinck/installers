@@ -1,0 +1,27 @@
+version: '3'
+
+volumes:
+  freshrss-data:
+    driver: local
+
+
+services:
+  freshrss:
+    image: lscr.io/linuxserver/freshrss:latest
+    container_name: freshrss
+    ports:
+      - "49999:80"
+    volumes:
+      - /home/administrator/docker_data/freshrss:/config
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+
+  full-test-rss:
+    image: heussd/fivefilters-full-text-rss:latest
+    container_name: full-test-rss
+    ports:
+      - "50000:80"
+    restart: always
