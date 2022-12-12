@@ -8,7 +8,7 @@ MinIO S3 is used as the artifact store and MySQL server is used as the backend s
 1. Clone (download) this repository
 
     ```bash
-    git clone http://github.com/jarneamerlinck/installers
+    git clone https://github.com/jarneamerlinck/installers
     ```
 
 2. `cd` into the `infrastructure/manifests/mlflow` directory
