@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # echo -n "Please enter a filename: "
 
 
@@ -24,7 +25,7 @@ fi
 
 if [ "$tmpFresh" = "y" ];then
     echo "fresh install ";
-    sudo apt install -y vim kitty git tmux gh;
+    sudo apt install -y vim kitty git tmux;
         
 fi
 
