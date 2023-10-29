@@ -24,16 +24,16 @@ for pkgToRemove in $(echo $pkgToRemoveListFull); do
   fi
 done
 
-apt-get --yes --purge remove $pkgToRemoveList;
+apt-get --yes --purge remove $pkgToRemoveList
 
-apt autoremove;
+apt autoremove
 
 # install and upgrade stuff stuff
 add-apt-repository ppa:mozillateam/ppa
-; # for firefox apt install
 
 
-apt update;
-apt install $pkgToInstallListFull -y;
+
+apt update
+apt install $pkgToInstallListFull -y
 
 echo "Fully run"
