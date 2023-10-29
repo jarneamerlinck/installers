@@ -25,5 +25,5 @@ done
 apt-get --yes --purge remove $pkgToRemoveList
 
 # install and upgrade stuff stuff
-
+add-apt-repository ppa:mozillateam/ppa # for firefox apt install
 apt install firefox
