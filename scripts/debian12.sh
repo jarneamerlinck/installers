@@ -2,7 +2,7 @@
 
 # Remove terminal bleep
 
-sed -i "set bell-style none/c\set bell-style none" /etc/inputrc
+sed -i "/set bell-style none/c\set bell-style none" /etc/inputrc
 
 
 # update
