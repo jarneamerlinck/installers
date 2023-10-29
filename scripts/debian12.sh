@@ -33,9 +33,9 @@ add-apt-repository ppa:mozillateam/ppa
 apt update
 apt install -y $pkgToInstallListFull 
 
-apt-get --yes --purge remove $pkgToRemoveList
+#apt-get --yes --purge remove $pkgToRemoveList
 
-apt autoremove
+#apt autoremove
 
 
 echo "Fully run"
