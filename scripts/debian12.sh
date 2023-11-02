@@ -2,7 +2,7 @@
 
 pkgToInstallListFull="kitty gh neofetch btop htop flatpak gnome-software-plugin-flatpak"
 flatpackToInstall="flathub com.bitwarden.desktop com.github.tchx84.Flatseal md.obsidian.Obsidian org.freedesktop.Piper"
-pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo"
+pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo goldendict"
 # Remove terminal bleep
 
 sed -i "/set bell-style none/c\set bell-style none" /etc/inputrc
@@ -51,4 +51,5 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Cleaning up
+apt autoclean -y
 apt autoremove -y
