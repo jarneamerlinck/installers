@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pkgToInstallListFull="kitty gh neofetch btop htop flatpak gnome-software-plugin-flatpak"
+flatpackToInstall="flathub com.bitwarden.desktop com.github.tchx84.Flatseal md.obsidian.Obsidian org.freedesktop.Piper"
 pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo"
 # Remove terminal bleep
 
@@ -31,14 +32,23 @@ apt-get --yes --purge remove $pkgToRemoveList
 apt install -y $pkgToInstallListFull 
 
 #dpkg-reconfigure sddm
+# wireguird
+wget https://github.com/UnnoTed/wireguird/releases/download/v1.1.0/wireguird_amd64.deb
+dpkg -i ./wireguird_amd64.deb
+
+
+
+#flatpak
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak install $flatpackToInstall
+
 
 # GUI settings
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
 
 # Cleaning up
 apt autoremove -y
