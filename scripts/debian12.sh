@@ -27,6 +27,7 @@ done
 
 
 apt update
+apt upgrade -y
 
 apt-get --yes --purge remove $pkgToRemoveList
 apt install -y $pkgToInstallListFull 
@@ -49,6 +50,10 @@ flatpak install -y $flatpackToInstall
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 300
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 
 # Cleaning up
 apt autoclean -y
