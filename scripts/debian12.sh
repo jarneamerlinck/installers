@@ -58,3 +58,6 @@ gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 # Cleaning up
 apt autoclean -y
 apt autoremove -y
+
+# Reboot after updates
+reboot
