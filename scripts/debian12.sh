@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pkgToInstallListFull="kitty gh neofetch btop htop"
+pkgToInstallListFull="kitty gh neofetch btop htop flatpak gnome-software-plugin-flatpak"
 pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo"
 # Remove terminal bleep
 
@@ -30,22 +30,14 @@ apt update
 apt-get --yes --purge remove $pkgToRemoveList
 apt install -y $pkgToInstallListFull 
 
-
-# Display manager
-#systemctl disable gdm
-
-echo "Fully run"
-apt install -y sddm
 #dpkg-reconfigure sddm
-
-#systemctl enable sddm
 
 # GUI settings
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
-
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 
 # Cleaning up
