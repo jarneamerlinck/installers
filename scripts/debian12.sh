@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pkgToInstallListFull="kitty gh neofetch btop htop"
-pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo gdm"
+pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo"
 # Remove terminal bleep
 
 sed -i "/set bell-style none/c\set bell-style none" /etc/inputrc
@@ -36,7 +36,9 @@ apt install -y $pkgToInstallListFull
 
 echo "Fully run"
 apt install -y sddm
-systemctl enable sddm
+#dpkg-reconfigure sddm
+
+#systemctl enable sddm
 
 # GUI settings
 
