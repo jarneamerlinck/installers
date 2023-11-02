@@ -30,7 +30,7 @@ apt update
 apt-get --yes --purge remove $pkgToRemoveList
 apt install -y $pkgToInstallListFull 
 
-apt autoremove
+
 # Display manager
 systemctl disable gdm
 
@@ -42,3 +42,9 @@ systemctl enable sddm
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+
+
+
+# Cleaning up
+apt autoremove -y
