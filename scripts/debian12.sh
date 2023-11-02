@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pkgToInstallListFull="kitty gh sddm neofetch btop htop"
+pkgToInstallListFull="kitty gh neofetch btop htop"
 pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo"
 # Remove terminal bleep
 
