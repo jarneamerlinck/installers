@@ -30,11 +30,13 @@ apt update
 apt-get --yes --purge remove $pkgToRemoveList
 apt install -y $pkgToInstallListFull 
 
-#apt autoremove
-
+apt autoremove
+# Display manager
+systemctl disable gdm
 
 echo "Fully run"
-
+apt install -y sddm
+systemctl enable sddm
 
 # GUI settings
 
