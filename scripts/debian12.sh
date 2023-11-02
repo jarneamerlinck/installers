@@ -42,7 +42,7 @@ dpkg -i ./wireguird_amd64.deb
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-flatpak install $flatpackToInstall
+flatpak install -y $flatpackToInstall
 
 
 # GUI settings
