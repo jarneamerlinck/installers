@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pkgToInstallListFull="kitty gh neofetch btop htop flatpak gnome-software-plugin-flatpak wget"
+pkgToInstallListFull="kitty gh neofetch btop htop flatpak gnome-software-plugin-flatpak wget wireguard-tools aptitude"
 flatpackToInstall="flathub com.bitwarden.desktop com.github.tchx84.Flatseal md.obsidian.Obsidian org.freedesktop.Piper"
 pkgToRemoveListFull="gnome-weather gnome-maps gnome-contacts aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines gnome-2048 gnome-chess five-or-more four-in-a-row yelp hitori gnome-klotski lightsoff gnome-mines gnome-nibbles malcontent seahorse quadrapassel iagno gnome-music gnome-robots shotwell swell-foop synaptic gnome-taquin gedit gnome-todo goldendict"
 # Remove terminal bleep
@@ -39,9 +39,9 @@ apt purge $pkgToRemoveList
 # wireguird
 wget https://github.com/UnnoTed/wireguird/releases/download/v1.1.0/wireguird_amd64.deb
 dpkg -i ./wireguird_amd64.deb
+apt install --fix-broken --fix-missing -y
 
-
-
+aptitude
 #flatpak
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -59,8 +59,7 @@ gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 
 # Cleaning up
-apt autoclean -y
-apt autoremove -y
+
 
 # Reboot after updates
 reboot
