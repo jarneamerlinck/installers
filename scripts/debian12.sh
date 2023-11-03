@@ -41,7 +41,7 @@ wget https://github.com/UnnoTed/wireguird/releases/download/v1.1.0/wireguird_amd
 dpkg -i ./wireguird_amd64.deb
 apt install --fix-broken --fix-missing -y
 
-aptitude
+aptitude hold $pkgToRemoveList
 #flatpak
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
