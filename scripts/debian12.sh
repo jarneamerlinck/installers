@@ -38,7 +38,7 @@ wget https://github.com/UnnoTed/wireguird/releases/download/v1.1.0/wireguird_amd
 dpkg -i ./wireguird_amd64.deb
 
 
-apt install --fix-broken --fix-missing -y
+apt install -y --fix-broken --fix-missing 
 
 #flatpak
 
@@ -60,4 +60,4 @@ gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 
 
 # Reboot after updates
-reboot
+#reboot
