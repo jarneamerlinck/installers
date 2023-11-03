@@ -26,10 +26,10 @@ apt upgrade -y
 
 
 
-apt remove $pkgToRemoveList
-apt purge $pkgToRemoveList
+apt remove -y $pkgToRemoveList
+apt purge -y $pkgToRemoveList
 
-apt autoremove
+apt autoremove -y
 
 apt install -y $pkgToInstallListFull 
 
