@@ -23,15 +23,18 @@ for pkgToRemove in $(echo $pkgToRemoveListFull); do
   if [[ $? -eq 0 ]]; then
     pkgToRemoveList="$pkgToRemoveList $pkgToRemove"
   fi
+  echo "$pkgToRemove hold" | dpkg: --set-selections
 done
 
 
 apt update
 apt upgrade -y
 
-apt-get --yes --purge remove $pkgToRemoveList
+
 apt install -y $pkgToInstallListFull 
 
+apt remove $pkgToRemoveList
+apt purge $pkgToRemoveList
 #dpkg-reconfigure sddm
 # wireguird
 wget https://github.com/UnnoTed/wireguird/releases/download/v1.1.0/wireguird_amd64.deb
