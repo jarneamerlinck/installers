@@ -4,5 +4,5 @@
 
 run debian installer
 ```bash
-curl -s -L https://raw.githubusercontent.com/jarneamerlinck/installers/main/scripts/debian12.sh | sudo bash
+curl -s -L https://about.knightofzero.com/debian12 | sudo bash
 ```
